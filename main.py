@@ -35,7 +35,7 @@ def main():
     y_pred = pipe.predict(x_test)
     score = sklearn.metrics.accuracy_score(y_test, y_pred)
     print(name, " has accuracy of:", "%0.2f" % score)
-
+    # Test
     # Update container to register xgboost
     update_registered_converter(
         XGBClassifier, 'XGBoostXGBClassifier',
