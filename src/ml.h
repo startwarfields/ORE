@@ -20,8 +20,8 @@ class ML
     void inference_onnx(void);
 
 
+    std::vector<float> generate_random_floats(int num_of_floats=4);
   private:
-
     std::unique_ptr<Ort::Session> session_;
     std::unique_ptr<Ort::Env> env_;
 
