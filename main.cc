@@ -15,7 +15,7 @@ void test_inference_fast()
   ML ml;
   ml.initialize_onnx();
   int i = 0;
-  while (i < 1000) {
+  while (i < 100000) {
 //    ml.initialize_onnx();
   ml.inference_onnx();
   i++;
@@ -27,7 +27,7 @@ void test_inference_slow()
 { 
   ML ml;
   int i = 0;
-  while (i < 1000) {
+  while (i < 100000) {
 //    ml.initialize_onnx();
     //
   ml.initialize_onnx();
@@ -49,7 +49,7 @@ int main(int argc, char* argv[]) {
   // Fast only loads the model once, then inferences separately
   test_inference_fast();
   auto stop = high_resolution_clock::now();
-  auto duration = duration_cast<microseconds>(stop - start);
+  auto duration = duration_cast<seconds>(stop - start);
 
   std::cout <<"Fast Version took: " << duration.count() << "\n";
 
@@ -59,7 +59,7 @@ int main(int argc, char* argv[]) {
   start = high_resolution_clock::now();
   test_inference_slow();
   stop = high_resolution_clock::now();
-  duration = duration_cast<microseconds>(stop - start);
+  duration = duration_cast<seconds>(stop - start);
 
   std::cout <<"Slow Version took: " << duration.count() << "\n";
 

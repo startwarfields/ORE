@@ -24,7 +24,8 @@ You will also need to change the model.onnx path in src/ml.cc
 
 The src/ml.cc file showcases how to create an ONNX runtime model inferencing the trained IRIS Dataset.
 It's important to understand why initialization is separate from inference. If you run the ./mltest executable,
-you should see a 10x speed difference. You should only be loading the trained ONNX model _once_, not before every inference.
+you should see a signifcant speed difference. As you increase the number of inferences, the speed of the slow
+version will be limited to your disk bandwidth, which is very bad! You should only be loading the trained ONNX model _once_, not before every inference.
 
 Do note that our trained model is small, and a decision tree. It's fast to inference on a regular CPU. 
 #### CXX ONNX Data Syntax
