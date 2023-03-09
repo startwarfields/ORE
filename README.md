@@ -29,7 +29,8 @@ you should see a 10x speed difference. You should only be loading the trained ON
 Do note that our trained model is small, and a decision tree. It's fast to inference on a regular CPU. 
 #### CXX ONNX Data Syntax
 
-It's commented out, but our Iris Dataset actually returns a 
+The code to print out the result commented out, but once we inference the trained model using session_.run(..),
+what returns is a somewhat complicated data structure, where the organization is as follows:
 ```cpp
 Ort::Value seq(map(idx, Ort::Value))
 ```
@@ -39,4 +40,4 @@ This is expanded to
 (0, <(0, {labels}), (1, {predictions}>))
 ```
 
-This can completely change if you change the model being trained!
+This will change if you change the model being trained! Maybe some kind of autosyntax parser would be a useful utility....
