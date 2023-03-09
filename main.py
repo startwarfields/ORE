@@ -6,6 +6,7 @@ import xgboost as xgb
 from xgboost import XGBClassifier
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
 from onnx.tools.net_drawer import GetPydotGraph, GetOpNodeProducer
 
 from skl2onnx.common.data_types import FloatTensorType
@@ -24,7 +25,8 @@ def main():
     x = data.iloc[:, 0:-1]
 
     # Train Test Split &  Load the pipeline
-    x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x,y, test_size=0.1)
+
+    x_train, x_test, y_train, y_test = train_test_split(x,y, test_size=0.1)
     pipe = Pipeline([('scalar', StandardScaler()),
                      ('lgbm', xgb.XGBClassifier(n_estimators=3))
                      ])
