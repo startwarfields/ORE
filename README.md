@@ -1,6 +1,6 @@
-## ML Test Bench
+## ONNX Runtime Examples
 
-Test bench area for running ML Models for export to other projects. Current example is Iris Dataset trained on XGBoost then exported using onnxruntime. 
+This repo serves as an example of how to utilize ONNX Runtime CXX API to inference a machine learning model. The current model is a XGBoost Classifier trained on the Iris Dataset.
 
 ### Iris Dataset Python example
 
@@ -28,6 +28,8 @@ you should see a signifcant speed difference. As you increase the number of infe
 version will be limited to your disk bandwidth, which is very bad! You should only be loading the trained ONNX model _once_, not before every inference.
 
 Do note that our trained model is small, and a decision tree. It's fast to inference on a regular CPU. 
+
+
 #### CXX ONNX Data Syntax
 
 The code to print out the result commented out, but once we inference the trained model using session_.run(..),
