@@ -13,7 +13,9 @@ python ore_ui.py
 ```
 
 In a new tab, you should be able to see a gradio interface where you can predict a iris class using feature sliders. 
+Should look like this:
 
+![Image](ore_ui.png)
 
 
 ### ONNX Runtime & C++ Example
