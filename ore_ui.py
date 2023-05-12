@@ -23,7 +23,7 @@ def main():
     live_inf = inference_wrapper()
     demo = gr.Interface(fn=live_inf.inference, inputs=[gr.Slider(0,10), gr.Slider(0,10), gr.Slider(0,10), gr.Slider(0,10)],
                         outputs="text")
-    demo.launch()
+    demo.launch(server_port=8080)
 
 
 if __name__ == "__main__":
