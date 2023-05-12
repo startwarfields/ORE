@@ -3,16 +3,34 @@
 This repo serves as an example of how to utilize ONNX Runtime CXX API to inference a machine learning model. The current model is a XGBoost Classifier trained on the Iris Dataset.
 
 ### Python Iris XGBoost Model & Gradio Predictor
-Install the requirements via
-```
-pip install -r requirements.txt
-```
-Then run
-```
-python ore_ui.py
-```
+#### Option A Docker
 
-In a new tab, you should be able to see a gradio interface where you can predict a iris class using feature sliders. 
+  1. Build the docker image 
+  ```bash
+  docker build -t "ore-image" .   
+  ```
+  2. Run the docker container
+  ```bash
+  docker run --network=host -it ore-image bash   
+  ```
+  3. Inside the container, execute
+  ```bash
+  cd src && python3 ore_ui.py
+  ```
+  Open the Local URL and the Gradio Interface should work
+
+#### Option B Natively
+
+  1. Install the requirements via
+  ```bash
+  pip install -r requirements.txt
+  ```
+  2. Then run
+  ```bash
+  python ore_ui.py
+  ```
+
+Open the url, you should be able to see a gradio interface where you can predict a iris class using feature sliders. 
 Should look like this:
 
 ![Image](ore_ui.png)
