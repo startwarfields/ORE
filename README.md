@@ -2,12 +2,18 @@
 
 This repo serves as an example of how to utilize ONNX Runtime CXX API to inference a machine learning model. The current model is a XGBoost Classifier trained on the Iris Dataset.
 
-### Iris Dataset Python example
+### Python Iris XGBoost Model & Gradio Predictor
+Install the requirements via
+```
+pip install -r requirements.txt
+```
+Then run
+```
+python ore_ui.py
+```
 
-The python script main.py (requirements TBD) trains a XGBoost Classifier model and exports it to a .onnx file format. 
-It also prints out a ONNX graph showcasing the components of the model.
+In a new tab, you should be able to see a gradio interface where you can predict a iris class using feature sliders. 
 
-TODO: Add source links
 
 
 ### ONNX Runtime & C++ Example
